@@ -1,14 +1,42 @@
 ## HyperFrameOE-WildFly
+업로드된 바이너리는 HyperFrame Open Edition WildFly 제품 설치를 위한 파일  
 
-## 설치 방법
-다음 tar 파일의 압축 해제
-tar -zxvf wildfly-preview-22.0.0.Final.tar.gz
+## 설치 파일
 
-## 파일 기동 
+### WildFly
+* Verison : wildfly-preview-22.0.0.Final
+* Note : https://www.wildfly.org/downloads/
 
-${WILDFLY_HOME}/bin > ./standalone.sh
+## 설치 및 실행
 
-http:// ip:8080 주소로 접속하여 WEB UI 화면을 확인
+### 1) WildFly 압출 풀기
+
+      $ cd /home/username/
+      $ tar -zxf wildfly-preview-22.0.0.Final.tar.gz
+
+### 2) Listen Port 확인 및 변경
+
+      $ vi /home/username/wildfly-preview-22.0.0.Final/standalone/standalone.xml
+
+      # 프로토콜에 따른 Port 확인 및 변경
+      <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
+          <socket-binding name="ajp" port="${jboss.ajp.port:8009}"/>
+          <socket-binding name="http" port="${jboss.http.port:8080}"/>
+          <socket-binding name="https" port="${jboss.https.port:8443}"/>
+          ...
+      </socket-binding-group>
+      
+### 3) WildFly 실행
+
+      $ vi /home/username/wildfly-preview-22.0.0.Final/bin/
+      $ ./standalone.sh
+
+### 4) WildFly 종료
+
+      $ vi /home/username/wildfly-preview-22.0.0.Final/bin/
+      $ ./standalone.sh
+
+
 
 ## 종료 
 
@@ -87,7 +115,7 @@ port 번호 변경
 
 - apache & WildFly 연동
 
-1. 사전에 apache 설치가 필요. (Apache 제품의 README.MD 파일 참고)
+         1. 사전에 apache 설치가 필요. (Apache 제품의 README.MD 파일 참고)
 
 2. tomcat-connectors-1.2.46-src.tar.gz 압축 해제하여  tomcat connector jk 설치
 
