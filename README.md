@@ -9,12 +9,11 @@
 
 ## 설치 및 실행
 
-### 1) WildFly 압출 풀기
+### 1) WildFly 압축 풀기
 
-    $ cd ${WILDFLY_HOME}/
     $ tar -zxf wildfly-preview-22.0.0.Final.tar.gz
 
-### 2) Listen Port 확인 및 변경
+### 2) Port 확인 및 변경
 
     $ vi ${WILDFLY_HOME}/wildfly-preview-22.0.0.Final/standalone/standalone.xml
 
