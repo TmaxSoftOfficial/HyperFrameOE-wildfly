@@ -30,7 +30,7 @@
     $ vi ${WILDFLY_HOME}/wildfly-preview-22.0.0.Final/bin/
     $ ./standalone.sh
 
-### 4) 종료 
+### 4) WildFly 종료 
 
 * 관리자 접속 / 종료
 
