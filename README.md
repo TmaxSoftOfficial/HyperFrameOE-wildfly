@@ -18,7 +18,19 @@
 
     $ tar -zxf wildfly-22.0.0.tar.gz
 
-### 2) Port 확인 및 변경
+### 2) 디렉토리 구조
+
+      Wildfly
+      ├── standalone        
+      ├── applicient      
+      ├── bin             
+      ├── docs             
+      ├── welcome-content
+      ├── moduels          
+      ├── domain          
+      └── tmp               
+      
+### 3) Port 확인 및 변경
 
     $ vi ${WILDFLY_HOME}/standalone/standalone.xml
 
@@ -30,12 +42,12 @@
         ...
     </socket-binding-group>
       
-### 3) WildFly 실행
+### 4) WildFly 실행
 
     $ vi ${WILDFLY_HOME}/bin/
     $ ./standalone.sh
 
-### 4) WildFly 종료 
+### 5) WildFly 종료 
 
 * 관리자 접속 / 종료
 
@@ -49,25 +61,6 @@
 
       $ cd ${WILDFLY_HOME}/bin/
       $ ./jboss-cli.sh --controller:localhost:[manage port] --connect command=:shutdown
-
-## 디렉토리 구조
-
-      wildfly
-      ├── standalone         <---------------- 서버에서 사용하는 클래스 라이브러리
-      │    ├── configuration 
-      │    ├── data          <---------------- standalone server 실행 시 생성되는 파일들을 보관
-      │    ├── deployments   <---------------- App 배포 디렉토리 
-      │    ├── lib           <---------------- 설치된 라이브러리가 위치 
-      │    ├── log
-      │    └── tmp           <---------------- 임시 파일 위치
-      ├── applicient         <---------------- Application 클라이언트 컨테이너에서 사용하는 파일 담당
-      ├── bin                <---------------- WildFly 파일의 기동 및 종료 등의 shell 경로
-      ├── docs               <---------------- 라이선스 파일, xml스키마 정의 파일, 예제 구성 파일 및 기타 문서 담당
-      ├── welcome-content
-      ├── moduels            <---------------- 서버에서 사용하는 클래스 라이브러리
-      ├── domain             <---------------- domain 모드에서 사용하는 파일 담당 ( *domain 모드 : 다중 서버 관리 모드 )
-      │    └── log
-      └── tmp                <---------------- 임시 파일 위치
 
 ## 버전 확인
 
