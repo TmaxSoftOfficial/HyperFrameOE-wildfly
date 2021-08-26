@@ -18,7 +18,7 @@
 
     $ tar -zxf wildfly-22.0.0.tar.gz
 
-### 2) 디렉토리 구조
+### 2) 디렉토리 구조 확인
 
       Wildfly
       ├── standalone        
